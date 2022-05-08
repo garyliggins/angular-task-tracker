@@ -1,0 +1,11 @@
+<!-- this is where the prop from tasks.component.html is used after it is passed to task-item.compnents.ts this is the prop that is passed to another components [task]='task' -->
+<!-- it is passing the prop and the loop <app-task-item *ngFor="let task of tasks" [task]='task' > </app-task-item> -->
+
+<div class="task" [ngClass]="{reminder: task.reminder}" (dblclick)="onToggle(task)">
+    <h3>{{task.text}}
+         <fa-icon (click)="onDelete(task)"
+          [ngStyle]="{'color': 'red' }"
+           [icon]="faTimes"></fa-icon>
+        </h3>
+    <p>{{task.day}}</p>
+</div>
